@@ -11,4 +11,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 I created this form using React and Tailwind CSS. When the component first renders, the app makes a GET request to the API endpoint and fetches the occupations and states. The reason I did that was because, I needed to show occupations and states as a selectable option in the form.
 
-Then once the form was filled and submitted, the app makes another call, but this time it's a POST request.
+Then, once the form was fully completed and submitted, the app makes another call, but this time it's a POST request.
