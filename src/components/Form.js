@@ -11,8 +11,8 @@ const Form = () => {
     occupation: "",
     state: "",
   });
-  const [occupationAndState, setOccupationAndState] = useState([]);
   const [success, setSuccess] = useState(false);
+  const [occupationAndState, setOccupationAndState] = useState([]);
   const { occupations, states } = occupationAndState;
 
   useEffect(() => {
@@ -27,12 +27,17 @@ const Form = () => {
   const handleSubmitForm = (e) => {
     e.preventDefault();
     setSuccess(false);
-    postForm(form).then((response) => {
-      if (response.status === 201) {
-        response.json();
-        setSuccess(true);
-      }
-    });
+    try {
+      postForm(form).then((response) => {
+        if (response.status === 201) {
+          response.json();
+          setSuccess(true);
+        }
+      });
+    } catch (error) {
+      console.error(error);
+    }
+
     setForm({
       name: "",
       email: "",
